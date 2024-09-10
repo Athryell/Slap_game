@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://1nnk5ugjdmbh"]
+
+[ext_resource type="Texture2D" uid="uid://duponwclbcyvr" path="res://Assets/Images/Background/Park.png" id="1_5f2bm"]
+[ext_resource type="Script" path="res://base_scene.gd" id="1_g83sy"]
+[ext_resource type="PackedScene" uid="uid://x6axhovx7bm7" path="res://Scenes/change_scene_trigger.tscn" id="2_b8wi6"]
+[ext_resource type="PackedScene" uid="uid://bm7bb478qnqnb" path="res://Scenes/spawner.tscn" id="4_ijtyu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kel4o"]
+size = Vector2(140, 146)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frb76"]
+size = Vector2(3264, 1934)
+
+[node name="Park" type="Node2D"]
+script = ExtResource("1_g83sy")
+
+[node name="Map" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="MapSprite" type="Sprite2D" parent="Map"]
+z_index = -10
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_5f2bm")
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map"]
+build_mode = 1
+polygon = PackedVector2Array(-1455, -841, 1456, -834, 1453, 235, 286, 287, 286, 537, 358, 574, 358, 756, -1035, 782, -990, 574, -1334, 582, -1322, 393, -971, 408, -975, 336, -1466, 325)
+one_way_collision_margin = 0.0
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="Any" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(-837, 513)
+
+[node name="ChangeSceneTrigger" parent="." instance=ExtResource("2_b8wi6")]
+position = Vector2(-1078, 493)
+connected_scene = "square"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChangeSceneTrigger"]
+shape = SubResource("RectangleShape2D_kel4o")
+
+[node name="Spawner" parent="." instance=ExtResource("4_ijtyu")]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawner"]
+shape = SubResource("RectangleShape2D_frb76")
+debug_color = Color(0.827451, 0.784314, 0.384314, 0.0431373)

@@ -1,5 +1,7 @@
 class_name Player extends CharacterBody2D
 
+@export var sprite_offset_flip = 12
+
 const SPEED = 300.0
 var direction: Vector2
 
@@ -25,5 +27,7 @@ func _physics_process(delta: float) -> void:
 func update_sprite() -> void:
 	if direction.x < 0:
 		player_sprite.flip_h = true
+		player_sprite.position.x = -sprite_offset_flip
 	else:
 		player_sprite.flip_h = false
+		player_sprite.position.x = sprite_offset_flip

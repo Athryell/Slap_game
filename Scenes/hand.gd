@@ -12,12 +12,10 @@ func _ready() -> void:
 
 
 func slap() -> void:
-	anim.play("slap_right")
-	#if player_sprite.flip_h:
-		#anim.play("slap_left")
-		#hand_sprite.flip_h = true
-	#else:
-		#hand_sprite.flip_h = false
+	if player_sprite.flip_h:
+		anim.play("slap_left")
+	else:
+		anim.play("slap_right")
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

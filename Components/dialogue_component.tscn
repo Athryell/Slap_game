@@ -106,6 +106,7 @@ wait_time = 0.5
 one_shot = true
 
 [node name="DialogueContainer" type="CenterContainer" parent="."]
+z_index = 2
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0

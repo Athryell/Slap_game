@@ -13,27 +13,28 @@ var bad_thing_slapped = 0
 var good_thing_slapped = 0
 
 
-func update_progress(f: Global.FACTION, t: Global.TYPE):
-	if f:
-		update_ending(f)
-	if t:
-		update_type(t)
+func update_ending_progress(faction: Global.FACTION) -> void:
+	if not faction:
+		return
 	
-	
-	print("SLAPPED a " + Global.FACTION.find_key(f) + " -> " + Global.TYPE.find_key(t))
-
-
-func update_ending(faction: Global.FACTION) -> void:
 	match faction:
 		Global.FACTION.BAD:
 			bad_thing_slapped += 1
 		Global.FACTION.GOOD:
 			good_thing_slapped += 1
+	
+	print("SLAPPED a " + Global.FACTION.find_key(faction))
 
 
-func update_type(type: Global.TYPE) -> void:
+func update_collectible(type: Global.TYPE) -> void:
+	if not type:
+		push_error("Forgot to assign TYPE!")
+		return
+	
 	match type:
 		Global.TYPE.BUTTERFLY:
 			butterflies_collected += 1
 		Global.TYPE.MOSQUITO:
 			mosquitoes_collected += 1
+	
+	print("of TYPE -> " + Global.TYPE.find_key(type))

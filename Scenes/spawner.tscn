@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bm7bb478qnqnb"]
+[gd_scene load_steps=4 format=3 uid="uid://bm7bb478qnqnb"]
 
 [ext_resource type="Script" path="res://Scenes/spawner.gd" id="1_7li8b"]
+[ext_resource type="PackedScene" uid="uid://dcsowl3ni4cml" path="res://Scenes/Collectibles/butterfly_character.tscn" id="2_iexnu"]
+[ext_resource type="PackedScene" uid="uid://btepi5oqf7n27" path="res://Scenes/Collectibles/mosquito_character.tscn" id="3_byqls"]
 
 [node name="Spawner" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_7li8b")
+butterfly = ExtResource("2_iexnu")
+mosquito = ExtResource("3_byqls")
 
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -21,7 +21,6 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	
 	if body is Player:
 		_show_dialogue()
 
@@ -34,11 +33,12 @@ func _on_body_exited(body: Node2D) -> void:
 func _show_dialogue():
 	label.text = dialogue[dialogue_line]
 	
-	dialogue_line += 1
-	if dialogue_line == dialogue.size():
-		dialogue_line = 0
-	
-	baloon_timer.start()
+	if dialogue.size() > 1:
+		dialogue_line += 1
+		if dialogue_line == dialogue.size():
+			dialogue_line = 0
+		
+		baloon_timer.start()	
 	
 	dialogue_container.visible = true
 	
@@ -61,7 +61,11 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 func _on_text_timer_timeout() -> void:
 	_hide_dialogue()
 	
-	var timer = get_tree().create_timer(PAUSE_BETWEEN_SENTENCES)
+	var timer
+	if dialogue_line == 0:
+		timer = get_tree().create_timer(PAUSE_BETWEEN_SENTENCES * 4)
+	else:
+		timer = get_tree().create_timer(PAUSE_BETWEEN_SENTENCES)
 	await timer.timeout
 	
 	_show_dialogue()

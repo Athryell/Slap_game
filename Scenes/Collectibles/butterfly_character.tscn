@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcsowl3ni4cml"]
 
-[ext_resource type="Script" path="res://Scenes/Characters/base_character.gd" id="1_qgbqy"]
+[ext_resource type="Script" path="res://collectible_character.gd" id="1_t0bg3"]
 [ext_resource type="Texture2D" uid="uid://ds71881nyiw64" path="res://Assets/Images/characters/insect.png" id="2_fduws"]
 [ext_resource type="Script" path="res://Components/aim_movement_component.gd" id="3_2jn3v"]
 
@@ -9,8 +9,7 @@
 [node name="Butterfly" type="Area2D"]
 collision_layer = 2
 collision_mask = 0
-script = ExtResource("1_qgbqy")
-faction = 1
+script = ExtResource("1_t0bg3")
 type = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

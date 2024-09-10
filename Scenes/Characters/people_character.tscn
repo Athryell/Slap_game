@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://ckeg0pg2y5gmu"]
 
-[ext_resource type="Script" path="res://Scenes/Characters/base_character.gd" id="1_bmxlk"]
 [ext_resource type="Texture2D" uid="uid://dyxtbsdbjyvsk" path="res://Assets/Images/characters/base_character.png" id="1_vbo7x"]
+[ext_resource type="Script" path="res://people_character.gd" id="1_vixp1"]
 [ext_resource type="Texture2D" uid="uid://x88g0wvsoy26" path="res://Assets/Images/characters/faint_character.png" id="3_xc8hg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w5sb3"]
 radius = 21.0
 
-[node name="BaseCharacter" type="Area2D"]
+[node name="PeopleCharacter" type="Area2D"]
 collision_layer = 2
-script = ExtResource("1_bmxlk")
+script = ExtResource("1_vixp1")
 
 [node name="CharacterSpriteNormal" type="Sprite2D" parent="."]
 position = Vector2(-9.53674e-07, -7)
