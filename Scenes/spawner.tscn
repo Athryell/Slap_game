@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm7bb478qnqnb"]
+
+[ext_resource type="Script" path="res://Scenes/spawner.gd" id="1_7li8b"]
+
+[node name="Spawner" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_7li8b")
+
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

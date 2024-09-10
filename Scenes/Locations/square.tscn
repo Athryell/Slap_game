@@ -1,0 +1,122 @@
+[gd_scene load_steps=15 format=3 uid="uid://dpfrr66nhogrh"]
+
+[ext_resource type="Texture2D" uid="uid://3auos2kmfgya" path="res://Assets/Images/Background/Main.png" id="1_iarue"]
+[ext_resource type="Script" path="res://Scenes/Locations/square.gd" id="1_tv3b4"]
+[ext_resource type="PackedScene" uid="uid://x6axhovx7bm7" path="res://Scenes/change_scene_trigger.tscn" id="3_1da5n"]
+[ext_resource type="PackedScene" uid="uid://bm7bb478qnqnb" path="res://Scenes/spawner.tscn" id="3_hdrgv"]
+[ext_resource type="PackedScene" uid="uid://btepi5oqf7n27" path="res://Scenes/Collectibles/mosquito.tscn" id="5_d4rp8"]
+[ext_resource type="PackedScene" uid="uid://ddd4qbwvdrfrp" path="res://Components/dialogue_component.tscn" id="5_f41xw"]
+[ext_resource type="PackedScene" uid="uid://dcsowl3ni4cml" path="res://Scenes/Collectibles/butterfly.tscn" id="6_gflio"]
+[ext_resource type="PackedScene" uid="uid://ckeg0pg2y5gmu" path="res://Scenes/Characters/base_character.tscn" id="8_na3ma"]
+[ext_resource type="Script" path="res://Components/marker_movement_component.gd" id="9_da8jy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frnb2"]
+size = Vector2(2203, 1844)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7fn3"]
+size = Vector2(96, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xajdv"]
+size = Vector2(61, 137)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ev3xd"]
+size = Vector2(174, 72)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_48ed5"]
+radius = 85.4017
+
+[node name="Square" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_tv3b4")
+metadata/_edit_lock_ = true
+
+[node name="Map" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="MapSprite" type="Sprite2D" parent="Map"]
+z_index = -10
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_iarue")
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map"]
+build_mode = 1
+polygon = PackedVector2Array(-2658, 682, -2573, 682, -2569, 743, -2456, 750, -2443, 673, -1451, 660, -1455, 568, -1082, 552, -1060, 368, -1480, 415, -1487, -20, -1428, -29, -1421, -198, -1489, -198, -1505, -395, -1958, -429, -1960, -481, -2178, -467, -2167, -429, -2656, -395)
+one_way_collision_margin = 0.0
+
+[node name="Spawner" parent="." instance=ExtResource("3_hdrgv")]
+position = Vector2(-2101, 221)
+butterfly = ExtResource("6_gflio")
+mosquito = ExtResource("5_d4rp8")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawner"]
+position = Vector2(203.5, -100)
+shape = SubResource("RectangleShape2D_frnb2")
+debug_color = Color(0.827451, 0.784314, 0.384314, 0.0431373)
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Home" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(-2510, 629)
+
+[node name="Pub" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(-1563, -89)
+
+[node name="Museum" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(-2054, -336)
+
+[node name="Entrances" type="Node" parent="."]
+
+[node name="ChangeSceneTriggerHome" parent="Entrances" instance=ExtResource("3_1da5n")]
+position = Vector2(-2509, 720)
+connected_scene = "home"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrances/ChangeSceneTriggerHome"]
+shape = SubResource("RectangleShape2D_x7fn3")
+
+[node name="ChangeSceneTriggerPub" parent="Entrances" instance=ExtResource("3_1da5n")]
+position = Vector2(-1460, -97)
+connected_scene = "pub"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrances/ChangeSceneTriggerPub"]
+position = Vector2(10.5, -4.5)
+shape = SubResource("RectangleShape2D_xajdv")
+
+[node name="ChangeSceneTriggerLibrary" parent="Entrances" instance=ExtResource("3_1da5n")]
+position = Vector2(-2068, -449)
+connected_scene = "museum"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrances/ChangeSceneTriggerLibrary"]
+position = Vector2(1, -5)
+shape = SubResource("RectangleShape2D_ev3xd")
+
+[node name="Characters" type="Node" parent="."]
+
+[node name="WalkCharacterTEST" parent="Characters" instance=ExtResource("8_na3ma")]
+position = Vector2(-2550, 448)
+faction = 1
+achievement = 1
+
+[node name="MarkerMovementComponent" type="Node" parent="Characters/WalkCharacterTEST"]
+script = ExtResource("9_da8jy")
+
+[node name="Marker2D" type="Marker2D" parent="Characters/WalkCharacterTEST/MarkerMovementComponent"]
+position = Vector2(-2387, 460)
+
+[node name="ChattyCharTEST" parent="Characters" instance=ExtResource("8_na3ma")]
+position = Vector2(-2207, 551)
+faction = 2
+metadata/_edit_group_ = true
+
+[node name="DialogueComponent" parent="Characters/ChattyCharTEST" instance=ExtResource("5_f41xw")]
+dialogue = Array[String](["Sto facendo una dieta per dimagrire", "Basta bere acqua e limone!"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/ChattyCharTEST/DialogueComponent"]
+shape = SubResource("CircleShape2D_48ed5")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://btepi5oqf7n27"]
+
+[ext_resource type="Script" path="res://Scenes/Characters/base_character.gd" id="1_rjs51"]
+[ext_resource type="Texture2D" uid="uid://ds71881nyiw64" path="res://Assets/Images/characters/insect.png" id="2_qwy01"]
+[ext_resource type="Script" path="res://Components/aim_movement_component.gd" id="3_tf27q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_blnwr"]
+
+[node name="Mosquito" type="Area2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_rjs51")
+faction = 2
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_blnwr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_qwy01")
+
+[node name="AimMovementComponent" type="Node" parent="."]
+script = ExtResource("3_tf27q")
+speed = 130.0

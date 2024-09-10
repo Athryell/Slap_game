@@ -1,0 +1,241 @@
+[gd_scene load_steps=15 format=3 uid="uid://br01bskus4nmb"]
+
+[ext_resource type="Script" path="res://Scenes/Characters/Player/player.gd" id="1_otwnl"]
+[ext_resource type="Texture2D" uid="uid://b35vut12e0cdx" path="res://Assets/Images/characters/players/old guy.png" id="1_w1b8n"]
+[ext_resource type="Texture2D" uid="uid://desp3xwgisjv7" path="res://Assets/Images/hands/hand.png" id="2_7mi78"]
+[ext_resource type="Script" path="res://Scenes/hand.gd" id="3_q6q66"]
+[ext_resource type="AudioStream" uid="uid://c5i1g2uxnqdyn" path="res://Assets/audio/sfx/soft-quick-punch.mp3" id="4_2pl23"]
+[ext_resource type="AudioStream" uid="uid://crf48xkeli8jc" path="res://Assets/audio/sfx/mixkit-fast-sword-whoosh-2792.mp3" id="5_3r3n4"]
+[ext_resource type="Script" path="res://camera_shake.gd" id="7_mg36u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rnf38"]
+radius = 16.0
+height = 32.0
+
+[sub_resource type="Animation" id="Animation_oh6pn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.127409]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SwingAudioStreamPlayer:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5on8c"]
+resource_name = "slap_right"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.566667, 0.666667, 0.766667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.380482, 0.0436332, 0.441568, 1.32994]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.566667, 0.666667, 0.766667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.427606, 0.729548, 0.190241]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333, 0.566667, 0.666667, 0.766667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.345, 1.345), Vector2(1, 1), Vector2(0.855, 0.855)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.566667, 0.766667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SwingAudioStreamPlayer:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.533333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h25lp"]
+_data = {
+"RESET": SubResource("Animation_oh6pn"),
+"slap_right": SubResource("Animation_5on8c")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xp6xx"]
+playback_mode = 1
+random_pitch = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("4_2pl23")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_kt12t"]
+random_pitch = 1.5
+streams_count = 1
+stream_0/stream = ExtResource("5_3r3n4")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2lcr1"]
+radius = 21.0
+
+[node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
+collision_mask = 8
+motion_mode = 1
+script = ExtResource("1_otwnl")
+
+[node name="Hand" type="Node2D" parent="."]
+rotation = -0.127409
+script = ExtResource("3_q6q66")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Hand"]
+position = Vector2(50, -4)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hand/Area2D"]
+position = Vector2(-27, -52)
+shape = SubResource("CapsuleShape2D_rnf38")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Hand"]
+position = Vector2(20, -52)
+scale = Vector2(0.628571, 0.628571)
+texture = ExtResource("2_7mi78")
+flip_v = true
+
+[node name="HandAnim" type="AnimationPlayer" parent="Hand"]
+libraries = {
+"": SubResource("AnimationLibrary_h25lp")
+}
+
+[node name="SlapAudioStreamPlayer" type="AudioStreamPlayer" parent="Hand"]
+stream = SubResource("AudioStreamRandomizer_xp6xx")
+
+[node name="SwingAudioStreamPlayer" type="AudioStreamPlayer" parent="Hand"]
+stream = SubResource("AudioStreamRandomizer_kt12t")
+volume_db = -5.0
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(12, -7)
+texture = ExtResource("1_w1b8n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2lcr1")
+metadata/_edit_lock_ = true
+
+[node name="FollowCam" type="Camera2D" parent="."]
+limit_smoothed = true
+position_smoothing_speed = 10.0
+script = ExtResource("7_mg36u")
+metadata/_edit_lock_ = true
+
+[connection signal="area_entered" from="Hand/Area2D" to="Hand" method="_on_area_2d_area_entered"]

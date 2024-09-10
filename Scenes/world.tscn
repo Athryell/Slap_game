@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbvqc4057ek37"]
+
+[ext_resource type="PackedScene" uid="uid://dpfrr66nhogrh" path="res://Scenes/Locations/square.tscn" id="1_kdaja"]
+
+[node name="World" type="Node2D"]
+
+[node name="Square" parent="." instance=ExtResource("1_kdaja")]
