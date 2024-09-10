@@ -5,20 +5,21 @@
 [ext_resource type="Script" path="res://Components/aim_movement_component.gd" id="3_tf27q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_blnwr"]
+radius = 12.0
 
 [node name="Mosquito" type="Area2D"]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_llv05")
 type = 2
+sprite_image_base = ExtResource("2_qwy01")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_blnwr")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CharacterSpriteNormal" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_qwy01")
+scale = Vector2(0.3, 0.3)
 
 [node name="AimMovementComponent" type="Node" parent="."]
 script = ExtResource("3_tf27q")

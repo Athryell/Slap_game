@@ -4,9 +4,15 @@ class_name BaseCharacter extends Area2D
 @export var achievement: Global.ACHIEVEMENT
 @export var max_amount_slap: int = 1
 
-@onready var slap_taken: int = 0
+@export var sprite_image_base: Texture2D
 
+@onready var sprite_base: Sprite2D = $CharacterSpriteNormal
+@onready var slap_taken: int = 0
 @onready var collider: CollisionShape2D = $CollisionShape2D
+
+func _ready() -> void:
+	sprite_base.texture = sprite_image_base #TODO NEXT: CHECK THIS
+
 
 func deal_slap():
 	slap_taken += 1

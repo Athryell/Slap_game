@@ -5,16 +5,18 @@
 [ext_resource type="Script" path="res://Components/aim_movement_component.gd" id="3_2jn3v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e4oc7"]
+radius = 12.0
 
 [node name="Butterfly" type="Area2D"]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_t0bg3")
 type = 1
+sprite_image_base = ExtResource("2_fduws")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CharacterSpriteNormal" type="Sprite2D" parent="."]
 position = Vector2(-0.25, -1.24828)
-scale = Vector2(0.0561927, 0.0561927)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_fduws")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

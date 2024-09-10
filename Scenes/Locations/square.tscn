@@ -1,12 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://dpfrr66nhogrh"]
+[gd_scene load_steps=18 format=3 uid="uid://dpfrr66nhogrh"]
 
 [ext_resource type="Script" path="res://Scenes/Locations/square.gd" id="1_tv3b4"]
 [ext_resource type="Texture2D" uid="uid://dtujfineklugp" path="res://Assets/Images/Background/Square.png" id="2_ts71b"]
 [ext_resource type="PackedScene" uid="uid://x6axhovx7bm7" path="res://Scenes/change_scene_trigger.tscn" id="3_1da5n"]
 [ext_resource type="PackedScene" uid="uid://bm7bb478qnqnb" path="res://Scenes/spawner.tscn" id="3_hdrgv"]
 [ext_resource type="PackedScene" uid="uid://ddd4qbwvdrfrp" path="res://Components/dialogue_component.tscn" id="5_f41xw"]
+[ext_resource type="Texture2D" uid="uid://x88g0wvsoy26" path="res://Assets/Images/characters/faint_character.png" id="6_ltp3o"]
+[ext_resource type="Texture2D" uid="uid://bt86wsgyrf10b" path="res://Assets/Images/characters/girl.png" id="7_52hyn"]
+[ext_resource type="Texture2D" uid="uid://dyxtbsdbjyvsk" path="res://Assets/Images/characters/base_character.png" id="7_e1xxv"]
 [ext_resource type="PackedScene" uid="uid://ckeg0pg2y5gmu" path="res://Scenes/Characters/people_character.tscn" id="8_na3ma"]
 [ext_resource type="Script" path="res://Components/marker_movement_component.gd" id="9_da8jy"]
+[ext_resource type="Texture2D" uid="uid://bnet8iu7in7qh" path="res://Assets/Images/characters/mario.png" id="11_3jx2l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frnb2"]
 size = Vector2(2432, 1934)
@@ -110,8 +114,10 @@ shape = SubResource("RectangleShape2D_lramf")
 
 [node name="WalkCharacterTEST" parent="Characters" instance=ExtResource("8_na3ma")]
 position = Vector2(-530, 439)
+sprite_image_faint = ExtResource("6_ltp3o")
 faction = 1
 achievement = 1
+sprite_image_base = ExtResource("7_52hyn")
 
 [node name="MarkerMovementComponent" type="Node" parent="Characters/WalkCharacterTEST"]
 script = ExtResource("9_da8jy")
@@ -121,7 +127,9 @@ position = Vector2(-367, 451)
 
 [node name="ChattyCharTEST" parent="Characters" instance=ExtResource("8_na3ma")]
 position = Vector2(-45, 374)
+sprite_image_faint = ExtResource("6_ltp3o")
 faction = 2
+sprite_image_base = ExtResource("7_e1xxv")
 metadata/_edit_group_ = true
 
 [node name="DialogueComponent" parent="Characters/ChattyCharTEST" instance=ExtResource("5_f41xw")]
@@ -132,7 +140,9 @@ shape = SubResource("CircleShape2D_48ed5")
 
 [node name="ChattyCharTESToneline" parent="Characters" instance=ExtResource("8_na3ma")]
 position = Vector2(-284, 556)
+sprite_image_faint = ExtResource("6_ltp3o")
 faction = 2
+sprite_image_base = ExtResource("11_3jx2l")
 metadata/_edit_group_ = true
 
 [node name="DialogueComponent" parent="Characters/ChattyCharTESToneline" instance=ExtResource("5_f41xw")]

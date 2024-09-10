@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cggy3hmtfheps"
-path="res://.godot/imported/crazy_character.png-1e7e9fe231a4e9889f3734d09a05a6d0.ctex"
+uid="uid://rhrgfka3rno"
+path="res://.godot/imported/hand 2.png-48c8ea2374c60a31542c094f96f2f7be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/characters/crazy_character.png"
-dest_files=["res://.godot/imported/crazy_character.png-1e7e9fe231a4e9889f3734d09a05a6d0.ctex"]
+source_file="res://Assets/Images/hands/hand 2.png"
+dest_files=["res://.godot/imported/hand 2.png-48c8ea2374c60a31542c094f96f2f7be.ctex"]
 
 [params]
 
