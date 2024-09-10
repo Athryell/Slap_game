@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://dpfrr66nhogrh"]
 
 [ext_resource type="Script" path="res://Scenes/Locations/square.gd" id="1_tv3b4"]
-[ext_resource type="Texture2D" uid="uid://dtujfineklugp" path="res://Assets/Images/Background/Square.png" id="2_ts71b"]
+[ext_resource type="Texture2D" uid="uid://dtujfineklugp" path="res://Assets/Images/background/Square.png" id="2_ts71b"]
 [ext_resource type="PackedScene" uid="uid://x6axhovx7bm7" path="res://Scenes/change_scene_trigger.tscn" id="3_1da5n"]
 [ext_resource type="PackedScene" uid="uid://bm7bb478qnqnb" path="res://Scenes/spawner.tscn" id="3_hdrgv"]
 [ext_resource type="PackedScene" uid="uid://ddd4qbwvdrfrp" path="res://Components/dialogue_component.tscn" id="5_f41xw"]
@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bt86wsgyrf10b" path="res://Assets/Images/characters/girl.png" id="7_52hyn"]
 [ext_resource type="Texture2D" uid="uid://dyxtbsdbjyvsk" path="res://Assets/Images/characters/base_character.png" id="7_e1xxv"]
 [ext_resource type="PackedScene" uid="uid://ckeg0pg2y5gmu" path="res://Scenes/Characters/people_character.tscn" id="8_na3ma"]
+[ext_resource type="Texture2D" uid="uid://daw2f1t4sy5gs" path="res://Assets/Images/characters/woman.png" id="9_7v6y7"]
 [ext_resource type="Script" path="res://Components/marker_movement_component.gd" id="9_da8jy"]
-[ext_resource type="Texture2D" uid="uid://bnet8iu7in7qh" path="res://Assets/Images/characters/mario.png" id="11_3jx2l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frnb2"]
 size = Vector2(2432, 1934)
@@ -49,7 +49,7 @@ metadata/_edit_lock_ = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map"]
 position = Vector2(2019.14, 0)
 build_mode = 1
-polygon = PackedVector2Array(-2658, 682, -2573, 682, -2569, 743, -2456, 750, -2443, 673, -1451, 660, -1455, 568, -1082, 552, -1060, 368, -1480, 415, -1487, -20, -1428, -29, -1421, -198, -1489, -198, -1505, -395, -1958, -429, -1960, -481, -2178, -467, -2167, -429, -2650, -371)
+polygon = PackedVector2Array(-2658, 682, -2334.14, 679, -2334.14, 753, -2188.14, 753, -2180.14, 672, -1451, 660, -1370.14, 656, -1355.14, 421, -1334.14, 296, -1274.14, 289, -1266.14, 129, -1345.14, 104, -1380.14, -349, -1958, -429, -1960, -481, -2181.14, -495, -2167, -429, -2650, -371, -2829.14, -363, -2816.14, -160, -2699.14, -160)
 one_way_collision_margin = 0.0
 
 [node name="Spawner" parent="." instance=ExtResource("3_hdrgv")]
@@ -63,21 +63,21 @@ debug_color = Color(0.827451, 0.784314, 0.384314, 0.0431373)
 metadata/_edit_lock_ = true
 
 [node name="Home" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(-490, 620)
+position = Vector2(-248, 603)
 
 [node name="Pub" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(457, -98)
+position = Vector2(589, 201)
 
 [node name="Museum" type="Marker2D" parent="EntranceMarkers"]
 position = Vector2(-34, -345)
 
 [node name="Park" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(476, 503)
+position = Vector2(-573, -224)
 
 [node name="Entrances" type="Node" parent="."]
 
 [node name="ChangeSceneTriggerHome" parent="Entrances" instance=ExtResource("3_1da5n")]
-position = Vector2(-489, 711)
+position = Vector2(-243, 713)
 connected_scene = "home"
 metadata/_edit_group_ = true
 
@@ -85,7 +85,7 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_x7fn3")
 
 [node name="ChangeSceneTriggerPub" parent="Entrances" instance=ExtResource("3_1da5n")]
-position = Vector2(560, -106)
+position = Vector2(695, 208)
 connected_scene = "pub"
 metadata/_edit_group_ = true
 
@@ -103,7 +103,7 @@ position = Vector2(1, -5)
 shape = SubResource("RectangleShape2D_ev3xd")
 
 [node name="ChangeSceneTriggerPark" parent="Entrances" instance=ExtResource("3_1da5n")]
-position = Vector2(669, 485)
+position = Vector2(-737, -259)
 connected_scene = "park"
 metadata/_edit_group_ = true
 
@@ -123,13 +123,13 @@ sprite_image_base = ExtResource("7_52hyn")
 script = ExtResource("9_da8jy")
 
 [node name="Marker2D" type="Marker2D" parent="Characters/WalkCharacterTEST/MarkerMovementComponent"]
-position = Vector2(-367, 451)
+position = Vector2(-312, 479)
 
 [node name="ChattyCharTEST" parent="Characters" instance=ExtResource("8_na3ma")]
-position = Vector2(-45, 374)
+position = Vector2(-202, 350)
 sprite_image_faint = ExtResource("6_ltp3o")
 faction = 2
-sprite_image_base = ExtResource("7_e1xxv")
+sprite_image_base = ExtResource("9_7v6y7")
 metadata/_edit_group_ = true
 
 [node name="DialogueComponent" parent="Characters/ChattyCharTEST" instance=ExtResource("5_f41xw")]
@@ -138,15 +138,15 @@ dialogue = Array[String](["Sto facendo una dieta per dimagrire", "Basta bere acq
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/ChattyCharTEST/DialogueComponent"]
 shape = SubResource("CircleShape2D_48ed5")
 
-[node name="ChattyCharTESToneline" parent="Characters" instance=ExtResource("8_na3ma")]
-position = Vector2(-284, 556)
+[node name="OneLineCharTEST" parent="Characters" instance=ExtResource("8_na3ma")]
+position = Vector2(-55, 560)
 sprite_image_faint = ExtResource("6_ltp3o")
 faction = 2
-sprite_image_base = ExtResource("11_3jx2l")
+sprite_image_base = ExtResource("7_e1xxv")
 metadata/_edit_group_ = true
 
-[node name="DialogueComponent" parent="Characters/ChattyCharTESToneline" instance=ExtResource("5_f41xw")]
+[node name="DialogueComponent" parent="Characters/OneLineCharTEST" instance=ExtResource("5_f41xw")]
 dialogue = Array[String](["just this line"])
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/ChattyCharTESToneline/DialogueComponent"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/OneLineCharTEST/DialogueComponent"]
 shape = SubResource("CircleShape2D_48ed5")

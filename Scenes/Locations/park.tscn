@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://1nnk5ugjdmbh"]
 
-[ext_resource type="Texture2D" uid="uid://duponwclbcyvr" path="res://Assets/Images/Background/Park.png" id="1_5f2bm"]
+[ext_resource type="Texture2D" uid="uid://duponwclbcyvr" path="res://Assets/Images/background/Park.png" id="1_5f2bm"]
 [ext_resource type="Script" path="res://base_scene.gd" id="1_g83sy"]
 [ext_resource type="PackedScene" uid="uid://x6axhovx7bm7" path="res://Scenes/change_scene_trigger.tscn" id="2_b8wi6"]
 [ext_resource type="PackedScene" uid="uid://bm7bb478qnqnb" path="res://Scenes/spawner.tscn" id="4_ijtyu"]

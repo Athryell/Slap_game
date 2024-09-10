@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://duponwclbcyvr"
-path="res://.godot/imported/Park.png-080c363ec7f4fcbf90291590af037573.ctex"
+path="res://.godot/imported/Park.png-e5b112bc0d5aef0951e68417f80f5996.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Background/Park.png"
-dest_files=["res://.godot/imported/Park.png-080c363ec7f4fcbf90291590af037573.ctex"]
+source_file="res://Assets/Images/background/Park.png"
+dest_files=["res://.godot/imported/Park.png-e5b112bc0d5aef0951e68417f80f5996.ctex"]
 
 [params]
 

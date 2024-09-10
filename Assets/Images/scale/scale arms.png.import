@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3auos2kmfgya"
-path="res://.godot/imported/Main.png-effdf963aeef04b140e0566b4991363f.ctex"
+uid="uid://ddjicpxb35qxh"
+path="res://.godot/imported/scale arms.png-95b68d729c5b0b2cb7217a2bdee8e862.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/background/Main.png"
-dest_files=["res://.godot/imported/Main.png-effdf963aeef04b140e0566b4991363f.ctex"]
+source_file="res://Assets/Images/scale/scale arms.png"
+dest_files=["res://.godot/imported/scale arms.png-95b68d729c5b0b2cb7217a2bdee8e862.ctex"]
 
 [params]
 

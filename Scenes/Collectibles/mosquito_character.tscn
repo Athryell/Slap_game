@@ -12,6 +12,9 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_llv05")
 type = 2
+faction = null
+achievement = null
+max_amount_slap = null
 sprite_image_base = ExtResource("2_qwy01")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -10,6 +10,9 @@ radius = 21.0
 [node name="PeopleCharacter" type="Area2D"]
 collision_layer = 2
 script = ExtResource("1_vixp1")
+faction = null
+achievement = null
+max_amount_slap = null
 
 [node name="CharacterSpriteNormal" type="Sprite2D" parent="."]
 position = Vector2(-9.53674e-07, -7)

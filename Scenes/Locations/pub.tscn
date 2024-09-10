@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cacv3nnoc4jwh"]
 
 [ext_resource type="Script" path="res://base_scene.gd" id="1_61p4s"]
-[ext_resource type="Texture2D" uid="uid://buqkfwlircq4b" path="res://Assets/Images/Background/Pub.png" id="1_py6og"]
+[ext_resource type="Texture2D" uid="uid://buqkfwlircq4b" path="res://Assets/Images/background/Pub.png" id="1_py6og"]
 [ext_resource type="Script" path="res://follow_cam.gd" id="3_pm2s7"]
 [ext_resource type="PackedScene" uid="uid://x6axhovx7bm7" path="res://Scenes/change_scene_trigger.tscn" id="3_y38ic"]
 

@@ -21,7 +21,7 @@ func deal_slap():
 		
 
 func _defeat(): # Added behaviours through inheritance
-	GameProgressManager.update_ending_progress(faction)
+	GameProgressManager.update_ending_progress(self)
 	AchievementsManager.update_achievement(achievement)
 	
 	collider.set_deferred("disabled", true)
