@@ -3,8 +3,11 @@ extends Node
 signal completed_butterflies
 signal completed_mosquitoes
 
-const BUTTERFLIES_TO_COLLECT = 30
-const MOSQUITOES_TO_COLLECT = 20
+#const BUTTERFLIES_TO_COLLECT = 30
+#const MOSQUITOES_TO_COLLECT = 20
+
+const BUTTERFLIES_TO_COLLECT = 4
+const MOSQUITOES_TO_COLLECT = 2
 
 var butterflies_collected = 0
 var mosquitoes_collected = 0
@@ -41,6 +44,11 @@ func update_collectible(type: Global.TYPE) -> void:
 			butterflies_collected += 1
 		Global.TYPE.MOSQUITO:
 			mosquitoes_collected += 1
+	
+	if mosquitoes_collected == MOSQUITOES_TO_COLLECT:
+		completed_mosquitoes.emit()
+	if butterflies_collected == BUTTERFLIES_TO_COLLECT:
+		completed_butterflies.emit()
 	
 	print("of TYPE -> " + Global.TYPE.find_key(type))
 

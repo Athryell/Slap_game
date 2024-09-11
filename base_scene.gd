@@ -19,7 +19,7 @@ func _ready() -> void:
 func position_player() -> void:
 	var last_scene = SceneManager.last_scene_name
 	if last_scene.is_empty():
-		last_scene = "Home"
+		last_scene = "Museum"
 	
 	for entrance in entrance_markers.get_children():
 		if entrance is Marker2D and entrance.name == "Any" or entrance.name == last_scene:

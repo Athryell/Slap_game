@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b35vut12e0cdx" path="res://Assets/Images/characters/players/old guy.png" id="1_w1b8n"]
 [ext_resource type="Texture2D" uid="uid://rhrgfka3rno" path="res://Assets/Images/hands/hand 2.png" id="3_1mfhk"]
 [ext_resource type="Script" path="res://Scenes/hand.gd" id="3_q6q66"]
-[ext_resource type="AudioStream" uid="uid://c5i1g2uxnqdyn" path="res://Assets/audio/sfx/soft-quick-punch.mp3" id="4_2pl23"]
-[ext_resource type="AudioStream" uid="uid://crf48xkeli8jc" path="res://Assets/audio/sfx/mixkit-fast-sword-whoosh-2792.mp3" id="5_3r3n4"]
+[ext_resource type="AudioStream" uid="uid://c5i1g2uxnqdyn" path="res://Assets/audio/sfx/slap/soft-quick-punch.mp3" id="4_2pl23"]
+[ext_resource type="AudioStream" uid="uid://crf48xkeli8jc" path="res://Assets/audio/sfx/slap/mixkit-fast-sword-whoosh-2792.mp3" id="5_3r3n4"]
 [ext_resource type="Script" path="res://camera_shake.gd" id="7_mg36u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rnf38"]

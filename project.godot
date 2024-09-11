@@ -22,6 +22,7 @@ SceneManager="*res://Autoload/scene_manager.gd"
 GameProgressManager="*res://Autoload/game_progress_manager.gd"
 Global="*res://Autoload/global.gd"
 AchievementsManager="*res://Autoload/achievements_manager.gd"
+GameManager="*res://Autoload/game_manager.gd"
 
 [dialogic]
 
@@ -48,6 +49,13 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={}
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "orange",
+"res://Scenes/": "gray"
+}
 
 [input]
 

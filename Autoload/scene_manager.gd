@@ -18,6 +18,6 @@ func change_scene(from, to_scene_name: String) -> void:
 func go_to_scale_scene():
 	get_tree().change_scene_to_file("res://Scenes/Windows/end_game_scale.tscn")
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if OS.is_debug_build() and Input.is_action_just_pressed("DEBUG_END_GAME"):
 		go_to_scale_scene()

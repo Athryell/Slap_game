@@ -15,7 +15,7 @@ func _ready() -> void:
 	GameProgressManager.completed_mosquitoes.connect(func(): stop_spawn_mq = true )
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if OS.is_debug_build() and Input.is_action_just_pressed("DEBUG_SPAWN"):
 		_spawn_insect()
 

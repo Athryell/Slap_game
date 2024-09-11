@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckeg0pg2y5gmu"]
+[gd_scene load_steps=6 format=3 uid="uid://ckeg0pg2y5gmu"]
 
 [ext_resource type="Texture2D" uid="uid://dyxtbsdbjyvsk" path="res://Assets/Images/characters/base_character.png" id="1_vbo7x"]
 [ext_resource type="Script" path="res://people_character.gd" id="1_vixp1"]
 [ext_resource type="Texture2D" uid="uid://x88g0wvsoy26" path="res://Assets/Images/characters/faint_character.png" id="3_xc8hg"]
+[ext_resource type="Script" path="res://Scenes/Characters/debug_data.gd" id="4_7e5ak"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w5sb3"]
 radius = 21.0
@@ -10,9 +11,8 @@ radius = 21.0
 [node name="PeopleCharacter" type="Area2D"]
 collision_layer = 2
 script = ExtResource("1_vixp1")
-faction = null
-achievement = null
-max_amount_slap = null
+sprite_image_faint = ExtResource("3_xc8hg")
+sprite_image_base = ExtResource("1_vbo7x")
 
 [node name="CharacterSpriteNormal" type="Sprite2D" parent="."]
 position = Vector2(-9.53674e-07, -7)
@@ -25,3 +25,23 @@ texture = ExtResource("3_xc8hg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_w5sb3")
+
+[node name="DebugData" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_7e5ak")
+
+[node name="FactionColor" type="ColorRect" parent="DebugData"]
+offset_left = -11.0
+offset_top = 37.0
+offset_right = -7.0
+offset_bottom = 41.0
+color = Color(0.900705, 0.900705, 0.900705, 1)
+
+[node name="HasAchievement" type="ColorRect" parent="DebugData"]
+offset_left = -4.0
+offset_top = 37.0
+offset_bottom = 41.0
+color = Color(0.223772, 0.38826, 0.889296, 1)
