@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dpfrr66nhogrh"]
+[gd_scene load_steps=24 format=3 uid="uid://dpfrr66nhogrh"]
 
 [ext_resource type="Script" path="res://Scenes/Locations/square.gd" id="1_tv3b4"]
 [ext_resource type="Texture2D" uid="uid://dtujfineklugp" path="res://Assets/Images/background/Square.png" id="2_ts71b"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://ckeg0pg2y5gmu" path="res://Scenes/Characters/people_character.tscn" id="8_na3ma"]
 [ext_resource type="Texture2D" uid="uid://daw2f1t4sy5gs" path="res://Assets/Images/characters/woman.png" id="9_7v6y7"]
 [ext_resource type="Script" path="res://Components/marker_movement_component.gd" id="9_da8jy"]
+[ext_resource type="Script" path="res://Scenes/Characters/Unique/smoker_character.gd" id="10_2rudc"]
+[ext_resource type="Texture2D" uid="uid://bnet8iu7in7qh" path="res://Assets/Images/characters/mario.png" id="11_l81be"]
+[ext_resource type="PackedScene" uid="uid://d0x052me10ioa" path="res://Scenes/props/fountain.tscn" id="12_1qp4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frnb2"]
 size = Vector2(2432, 1934)
@@ -27,6 +30,34 @@ size = Vector2(153, 134)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_48ed5"]
 radius = 85.4017
+
+[sub_resource type="Gradient" id="Gradient_bjn11"]
+colors = PackedColorArray(0.414704, 0.414704, 0.414704, 1, 0.440336, 0.440336, 0.440336, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_re785"]
+gradient = SubResource("Gradient_bjn11")
+
+[sub_resource type="Curve" id="Curve_4lh08"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_072ap"]
+curve = SubResource("Curve_4lh08")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_epqul"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 16.402
+initial_velocity_max = 36.37
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 69.09
+linear_accel_max = 100.0
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_072ap")
+color_ramp = SubResource("GradientTexture1D_re785")
+turbulence_enabled = true
+turbulence_noise_scale = 1.453
+turbulence_influence_max = 0.179
 
 [node name="Square" type="Node2D"]
 y_sort_enabled = true
@@ -51,6 +82,7 @@ polygon = PackedVector2Array(-2658, 682, -2334.14, 679, -2334.14, 753, -2188.14,
 one_way_collision_margin = 0.0
 
 [node name="Spawner" parent="." instance=ExtResource("3_hdrgv")]
+position = Vector2(-8, 0)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawner"]
@@ -111,16 +143,17 @@ shape = SubResource("RectangleShape2D_lramf")
 [node name="Characters" type="Node" parent="."]
 
 [node name="WalkCharacterTEST" parent="Characters" instance=ExtResource("8_na3ma")]
-position = Vector2(-530, 439)
+position = Vector2(302, -75)
 faction = 1
 achievement = 1
 sprite_image_base = ExtResource("7_52hyn")
+metadata/_edit_group_ = true
 
 [node name="MarkerMovementComponent" type="Node" parent="Characters/WalkCharacterTEST"]
 script = ExtResource("9_da8jy")
 
 [node name="Marker2D" type="Marker2D" parent="Characters/WalkCharacterTEST/MarkerMovementComponent"]
-position = Vector2(-312, 479)
+position = Vector2(451, 30)
 
 [node name="ChattyCharTEST" parent="Characters" instance=ExtResource("8_na3ma")]
 position = Vector2(-202, 350)
@@ -144,3 +177,27 @@ dialogue = Array[String](["just this line"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/OneLineCharTEST/DialogueComponent"]
 shape = SubResource("CircleShape2D_48ed5")
+
+[node name="SmokerCharacter" parent="Characters" instance=ExtResource("8_na3ma")]
+position = Vector2(235, 82)
+script = ExtResource("10_2rudc")
+time_to_lit_sigaret = 10.0
+faction = 2
+sprite_image_base = ExtResource("11_l81be")
+
+[node name="Marker1" type="Marker2D" parent="Characters/SmokerCharacter"]
+
+[node name="Marker2" type="Marker2D" parent="Characters/SmokerCharacter"]
+position = Vector2(99, 88)
+
+[node name="Marker3" type="Marker2D" parent="Characters/SmokerCharacter"]
+position = Vector2(112, -54)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Characters/SmokerCharacter"]
+self_modulate = Color(0.354063, 0.354063, 0.354063, 1)
+position = Vector2(24, -24)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_epqul")
+
+[node name="Fountain" parent="." instance=ExtResource("12_1qp4n")]
+position = Vector2(-8, 62)

@@ -1,4 +1,4 @@
-extends Camera2D
+class_name CameraShake extends Camera2D
 
 var shake_duration
 var shake_magnitude

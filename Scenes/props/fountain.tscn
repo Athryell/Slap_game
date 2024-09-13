@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0x052me10ioa"]
+
+[ext_resource type="Script" path="res://Scenes/props/fountain.gd" id="1_1vnun"]
+[ext_resource type="Texture2D" uid="uid://ccru8wi22roa8" path="res://Assets/Images/props/fountain.png" id="1_wr64l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5i0pf"]
+radius = 75.0
+height = 262.571
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y2emp"]
+radius = 70.772
+
+[node name="Fountain" type="Node2D"]
+scale = Vector2(1.4, 1.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wr64l")
+
+[node name="Water" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_1vnun")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
+position = Vector2(2, 16)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_5i0pf")
+
+[node name="Splash" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Splash"]
+shape = SubResource("CircleShape2D_y2emp")
+debug_color = Color(0.856592, 0.180685, 0.416044, 0.42)
+
+[connection signal="area_entered" from="Splash" to="Water" method="_on_splash_area_entered"]

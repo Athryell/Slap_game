@@ -15,6 +15,7 @@ func _ready() -> void:
 
 
 func deal_slap():
+	print("base deal slap")
 	slap_taken += 1
 	if slap_taken >= max_amount_slap:
 		_defeat()

@@ -34,6 +34,7 @@ offset_bottom = 40.0
 script = ExtResource("4_7e5ak")
 
 [node name="FactionColor" type="ColorRect" parent="DebugData"]
+layout_mode = 0
 offset_left = -11.0
 offset_top = 37.0
 offset_right = -7.0
@@ -41,6 +42,7 @@ offset_bottom = 41.0
 color = Color(0.900705, 0.900705, 0.900705, 1)
 
 [node name="HasAchievement" type="ColorRect" parent="DebugData"]
+layout_mode = 0
 offset_left = -4.0
 offset_top = 37.0
 offset_bottom = 41.0
