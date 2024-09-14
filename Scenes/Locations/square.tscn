@@ -156,7 +156,7 @@ script = ExtResource("9_da8jy")
 position = Vector2(451, 30)
 
 [node name="ChattyCharTEST" parent="Characters" instance=ExtResource("8_na3ma")]
-position = Vector2(-202, 350)
+position = Vector2(-262, 252)
 faction = 2
 sprite_image_base = ExtResource("9_7v6y7")
 metadata/_edit_group_ = true
@@ -167,15 +167,15 @@ dialogue = Array[String](["Sto facendo una dieta per dimagrire", "Basta bere acq
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/ChattyCharTEST/DialogueComponent"]
 shape = SubResource("CircleShape2D_48ed5")
 
-[node name="OneLineCharTEST" parent="Characters" instance=ExtResource("8_na3ma")]
-position = Vector2(-55, 560)
+[node name="SpeakCharTEST" parent="Characters" instance=ExtResource("8_na3ma")]
+position = Vector2(-28, 387)
 faction = 2
 metadata/_edit_group_ = true
 
-[node name="DialogueComponent" parent="Characters/OneLineCharTEST" instance=ExtResource("5_f41xw")]
-dialogue = Array[String](["just this line"])
+[node name="DialogueComponent" parent="Characters/SpeakCharTEST" instance=ExtResource("5_f41xw")]
+dialogue = Array[String](["Sai una cosa?", "La pizza fa SCHIFO!"])
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/OneLineCharTEST/DialogueComponent"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/SpeakCharTEST/DialogueComponent"]
 shape = SubResource("CircleShape2D_48ed5")
 
 [node name="SmokerCharacter" parent="Characters" instance=ExtResource("8_na3ma")]

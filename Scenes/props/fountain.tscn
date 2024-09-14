@@ -17,8 +17,7 @@ scale = Vector2(1.4, 1.4)
 texture = ExtResource("1_wr64l")
 
 [node name="Water" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 0
+collision_layer = 0
 script = ExtResource("1_1vnun")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
@@ -34,4 +33,5 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_y2emp")
 debug_color = Color(0.856592, 0.180685, 0.416044, 0.42)
 
+[connection signal="area_entered" from="Water" to="Water" method="_on_water_area_entered"]
 [connection signal="area_entered" from="Splash" to="Water" method="_on_splash_area_entered"]
