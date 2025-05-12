@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://b067x1cr0pskp"]
 
 [ext_resource type="Texture2D" uid="uid://byo4iap4vp121" path="res://Assets/Images/background/Museum.png" id="1_la5mv"]
-[ext_resource type="Script" path="res://base_scene.gd" id="1_ox0bf"]
-[ext_resource type="Script" path="res://follow_cam.gd" id="3_6k3u8"]
+[ext_resource type="Script" uid="uid://blt5ib71su8u3" path="res://base_scene.gd" id="1_ox0bf"]
+[ext_resource type="Script" uid="uid://c6poaorietgo5" path="res://follow_cam.gd" id="3_6k3u8"]
 [ext_resource type="PackedScene" uid="uid://x6axhovx7bm7" path="res://Scenes/change_scene_trigger.tscn" id="3_iv2gt"]
 [ext_resource type="PackedScene" uid="uid://ckeg0pg2y5gmu" path="res://Scenes/Characters/people_character.tscn" id="5_j43cf"]
 [ext_resource type="Texture2D" uid="uid://dk1ykxeoqjfeo" path="res://Assets/Images/characters/boy.png" id="6_gh7j3"]

@@ -3,11 +3,8 @@ extends Node
 signal completed_butterflies
 signal completed_mosquitoes
 
-#const BUTTERFLIES_TO_COLLECT = 30
-#const MOSQUITOES_TO_COLLECT = 20
-
-const BUTTERFLIES_TO_COLLECT = 4
-const MOSQUITOES_TO_COLLECT = 2
+const BUTTERFLIES_TO_COLLECT = 30
+const MOSQUITOES_TO_COLLECT = 20
 
 var butterflies_collected = 0
 var mosquitoes_collected = 0

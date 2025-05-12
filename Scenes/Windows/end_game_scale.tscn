@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cbq0ovgpj8hg7"]
 
 [ext_resource type="Texture2D" uid="uid://ddjicpxb35qxh" path="res://Assets/Images/scale/scale arms.png" id="1_7r1a8"]
-[ext_resource type="Script" path="res://Scenes/Windows/end_game_scale.gd" id="1_nldbs"]
+[ext_resource type="Script" uid="uid://j8oa5rucbbp0" path="res://Scenes/Windows/end_game_scale.gd" id="1_nldbs"]
 [ext_resource type="Texture2D" uid="uid://bn4ebtg0plvml" path="res://Assets/Images/scale/scale_body.png" id="2_yxeqe"]
 [ext_resource type="Texture2D" uid="uid://cr1xnshtf0nrg" path="res://Assets/Images/scale/scale_left_plate.png" id="3_2w346"]
 [ext_resource type="PackedScene" uid="uid://bk81avd5c4tib" path="res://Scenes/Windows/falling_people.tscn" id="4_6plok"]

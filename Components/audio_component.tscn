@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://j388l2u45cvo"]
 
-[ext_resource type="Script" path="res://Components/audio_component.gd" id="1_s4hpj"]
+[ext_resource type="Script" uid="uid://b6net6ugs86fr" path="res://Components/audio_component.gd" id="1_s4hpj"]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
 max_distance = 1000.0

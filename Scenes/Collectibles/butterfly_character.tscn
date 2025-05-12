@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcsowl3ni4cml"]
 
-[ext_resource type="Script" path="res://collectible_character.gd" id="1_t0bg3"]
+[ext_resource type="Script" uid="uid://b4y3krnk3fyr1" path="res://collectible_character.gd" id="1_t0bg3"]
 [ext_resource type="Texture2D" uid="uid://ds71881nyiw64" path="res://Assets/Images/characters/insect.png" id="2_fduws"]
-[ext_resource type="Script" path="res://Components/aim_movement_component.gd" id="3_2jn3v"]
+[ext_resource type="Script" uid="uid://dfwxhd30ngncp" path="res://Components/aim_movement_component.gd" id="3_2jn3v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e4oc7"]
 radius = 12.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cyts84w8cw5ql"]
 
 [ext_resource type="PackedScene" uid="uid://ckeg0pg2y5gmu" path="res://Scenes/Characters/people_character.tscn" id="1_tbqkp"]
-[ext_resource type="Script" path="res://Scenes/Characters/walking_characterTEST.gd" id="2_4jykf"]
+[ext_resource type="Script" uid="uid://c7q1k1xg3l6i3" path="res://Scenes/Characters/walking_characterTEST.gd" id="2_4jykf"]
 
 [node name="WalkingCharacter" instance=ExtResource("1_tbqkp")]
 script = ExtResource("2_4jykf")

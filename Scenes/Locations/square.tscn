@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://dpfrr66nhogrh"]
 
-[ext_resource type="Script" path="res://Scenes/Locations/square.gd" id="1_tv3b4"]
+[ext_resource type="Script" uid="uid://77x4h5bqqvtj" path="res://Scenes/Locations/square.gd" id="1_tv3b4"]
 [ext_resource type="Texture2D" uid="uid://dtujfineklugp" path="res://Assets/Images/background/Square.png" id="2_ts71b"]
 [ext_resource type="PackedScene" uid="uid://x6axhovx7bm7" path="res://Scenes/change_scene_trigger.tscn" id="3_1da5n"]
 [ext_resource type="PackedScene" uid="uid://bm7bb478qnqnb" path="res://Scenes/spawner.tscn" id="3_hdrgv"]
@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bt86wsgyrf10b" path="res://Assets/Images/characters/girl.png" id="7_52hyn"]
 [ext_resource type="PackedScene" uid="uid://ckeg0pg2y5gmu" path="res://Scenes/Characters/people_character.tscn" id="8_na3ma"]
 [ext_resource type="Texture2D" uid="uid://daw2f1t4sy5gs" path="res://Assets/Images/characters/woman.png" id="9_7v6y7"]
-[ext_resource type="Script" path="res://Components/marker_movement_component.gd" id="9_da8jy"]
-[ext_resource type="Script" path="res://Scenes/Characters/Unique/smoker_character.gd" id="10_2rudc"]
+[ext_resource type="Script" uid="uid://5xlshx7vqqf3" path="res://Components/marker_movement_component.gd" id="9_da8jy"]
+[ext_resource type="Script" uid="uid://los3na4mihm4" path="res://Scenes/Characters/Unique/smoker_character.gd" id="10_2rudc"]
 [ext_resource type="Texture2D" uid="uid://bnet8iu7in7qh" path="res://Assets/Images/characters/mario.png" id="11_l81be"]
 [ext_resource type="PackedScene" uid="uid://d0x052me10ioa" path="res://Scenes/props/fountain.tscn" id="12_1qp4n"]
 
